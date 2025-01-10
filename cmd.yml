@@ -1,0 +1,16 @@
+---
+- name: script 
+  hosts: webservers
+  become: yes
+
+  tasks:
+  - name: install wget 
+    command: yum install wget -y
+    creates: /usr/bin/wget
+
+  - name: check wget is intalled or not
+    command: wget --version
+    register: wget_version
+    failed_when: "wget is not installed"
+    changed_when: false
+    
