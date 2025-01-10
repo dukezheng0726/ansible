@@ -16,8 +16,8 @@
 
     - name: copy file to agent
       copy:
-        src: /home/ec2-user/playbook/ansible/index.html
+        src: /home/ec2-user/playbook/ansible/index2.html
         dest: /var/www/html
-        # owner: root
-        # group: root
-        # mode: "0644"
+        owner: root
+        group: root
+        mode: "0644"
